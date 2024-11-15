@@ -29,7 +29,9 @@ Route::prefix('admin')->group(function () {
         Route::get('/', [\App\Http\Controllers\Admin\StudentController::class, 'index']);
         Route::get('/create', [\App\Http\Controllers\Admin\StudentController::class, 'create']);
         Route::post('/store', [\App\Http\Controllers\Admin\StudentController::class, 'store']);
-        Route::get('/{student}', [\App\Http\Controllers\Admin\StudentController::class, 'show']);
+        Route::get('/edit/{student}', [\App\Http\Controllers\Admin\StudentController::class, 'edit']);
+        Route::put('/update/{student}', [\App\Http\Controllers\Admin\StudentController::class, 'update']);
+        Route::delete('/delete/{student}', [\App\Http\Controllers\Admin\StudentController::class, 'destroy']);
     });
 });
 
