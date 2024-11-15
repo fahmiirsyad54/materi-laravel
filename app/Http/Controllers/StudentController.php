@@ -10,12 +10,12 @@ class StudentController extends Controller
 {
     public function index()
     {
-        // $students = Student::with('grade')->latest()->get();
+        $students = Student::with('grade')->latest()->get();
         return view('students', [
             'title' => "Students",
-            'students' => Student::all()
-            // 'students' => $students
+            'students' => $students
 
+            // 'students' => $students
         ]);
     }
 }
